@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+html, body {
+  overflow-x: hidden;        /* prevent horizontal scroll on phone/tablet */
+  overscroll-behavior-x: none;
+}
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #f7f9fc;
+  color: #0f172a;
+}
+
+/* Leaflet — light Voyager basemap */
+.leaflet-container {
+  background: #e6ecf3;
+  font-family: inherit;
+}
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: #475569 !important;
+  font-size: 10px !important;
+}
+.leaflet-control-attribution a {
+  color: #2563eb !important;
+}
+.leaflet-control-zoom a {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Glowing pulse marker for the Opportunity Finder hotspots. */
+.hotspot-marker { background: transparent !important; border: none !important; }
+.hotspot-pulse {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  background: #16a34a;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.6), 0 4px 12px rgba(15, 23, 42, 0.18);
+  border: 2px solid #ffffff;
+  animation: hotspot-pulse 2.2s infinite;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+.hotspot-pulse.rank-2 { background: #22c55e; }
+.hotspot-pulse.rank-3 { background: #4ade80; color: #064e3b; }
+
+@keyframes hotspot-pulse {
+  0%   { box-shadow: 0 0 0 0    rgba(22, 163, 74, 0.6), 0 4px 12px rgba(15, 23, 42, 0.18); }
+  70%  { box-shadow: 0 0 0 18px rgba(22, 163, 74, 0),   0 4px 12px rgba(15, 23, 42, 0.18); }
+  100% { box-shadow: 0 0 0 0    rgba(22, 163, 74, 0),   0 4px 12px rgba(15, 23, 42, 0.18); }
+}
