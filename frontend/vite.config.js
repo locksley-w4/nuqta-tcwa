@@ -5,10 +5,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
+    // The backend serves every route under /api as well as bare, so the dev
+    // proxy can forward the prefix untouched and match production exactly.
     proxy: {
-      '/analyze': 'http://localhost:5001',
-      '/find-hotspots': 'http://localhost:5001',
-      '/analyze-finance': 'http://localhost:5001',
+      '/api': 'http://localhost:5001',
     },
   },
 });

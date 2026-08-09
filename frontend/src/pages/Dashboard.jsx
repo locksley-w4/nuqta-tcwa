@@ -46,9 +46,11 @@ function saveHistory(entries) {
   }
 }
 
-const ANALYZE_URL = import.meta.env.VITE_API_URL || '/analyze';
-const FINANCE_URL = import.meta.env.VITE_FINANCE_URL || '/analyze-finance';
-const HOTSPOTS_URL = import.meta.env.VITE_HOTSPOTS_URL || '/find-hotspots';
+// Relative /api/* paths work unchanged in dev (Vite proxies them to :5001)
+// and in production (Vercel routes them to the serverless function).
+const ANALYZE_URL = import.meta.env.VITE_API_URL || '/api/analyze';
+const FINANCE_URL = import.meta.env.VITE_FINANCE_URL || '/api/analyze-finance';
+const HOTSPOTS_URL = import.meta.env.VITE_HOTSPOTS_URL || '/api/find-hotspots';
 
 const DEFAULT_LOCATION = {
   lat: 41.299,
