@@ -2,6 +2,8 @@
 
 A platform that produces a **bank-grade viability report** for opening a business at a given location.
 
+**Live demo — [nuqta-tcwa.vercel.app](https://nuqta-tcwa.vercel.app)**
+
 ## Beyond the site score — extra features
 
 The platform doesn't stop at the geographic viability score. Four additional capabilities turn it from a one-shot report into a full decision-and-funding workflow:
@@ -89,11 +91,30 @@ npm install
 npm run dev   # http://localhost:5173
 ```
 
-The Vite dev server proxies `/analyze` → `http://localhost:5001`.
+The Vite dev server proxies `/api/*` → `http://localhost:5001`, so the frontend
+calls the same paths in development and in production.
+
+## Deploy
+
+Deployed to Vercel as a single project: the frontend is built to `frontend/dist`
+and served statically, and the Express app runs as one serverless function via
+`api/index.js`. Configuration lives in `vercel.json`.
+
+```bash
+vercel --prod
+```
 
 ## API
 
-`POST /analyze`
+Three endpoints, each reachable under `/api`:
+
+| Endpoint | Purpose |
+| --- | --- |
+| `POST /api/analyze` | Full site report, blocks A–G |
+| `POST /api/find-hotspots` | Grid-scan the city for the best locations |
+| `POST /api/analyze-finance` | Loan fundability (DSCR, collateral coverage, verdict) |
+
+`POST /api/analyze`
 ```json
 { "businessType": "Coffee shop", "lat": 41.2995, "lng": 69.2401 }
 ```
