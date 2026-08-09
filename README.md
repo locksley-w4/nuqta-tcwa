@@ -94,16 +94,6 @@ npm run dev   # http://localhost:5173
 The Vite dev server proxies `/api/*` → `http://localhost:5001`, so the frontend
 calls the same paths in development and in production.
 
-## Deploy
-
-Deployed to Vercel as a single project: the frontend is built to `frontend/dist`
-and served statically, and the Express app runs as one serverless function via
-`api/index.js`. Configuration lives in `vercel.json`.
-
-```bash
-vercel --prod
-```
-
 ## API
 
 Three endpoints, each reachable under `/api`:
@@ -148,21 +138,5 @@ Response shape (truncated):
 - **NO** < 55 → High credit risk
 
 Cafes, restaurants, bakeries and similar businesses receive a **competition sensitivity penalty** (15% dampening on their competition score) since they're highly exposed to local competitors.
-
-## Frontend features
-
-- Hero **YES / CONDITIONAL / NO** badge with final score
-- Stat cards (final score, niche opportunity, break-even, closure probability)
-- **Radar chart** over the 5 analytical blocks
-- **12-month revenue line chart** with Ramadan/Navro'z spikes highlighted
-- **Interactive map picker** (Leaflet + CartoDB dark tiles) with:
-  - Address / city / landmark **search** via Nominatim (no API key)
-  - **Click anywhere** on the map to drop a pin
-  - Reverse-geocoded address shown back in the search bar
-- **AI Reasoning** panel from the backend reasoning engine
-- Detailed **Block A–E** grid
-- **Banker View** toggle reveals a Credit Risk Assessment with rate premium
-
-Scores are mocked but deterministic per `(businessType, lat, lng)` — the same input always returns the same report.
 
 
