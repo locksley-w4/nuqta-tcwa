@@ -1,7 +1,7 @@
 {
   "name": "ai-business-analyzer-backend",
   "version": "1.0.0",
-  "description": "Backend for AI Business Analyzer MVP",
+  "description": "Backend for AI Business Analyzer",
   "main": "server.js",
   "type": "commonjs",
   "scripts": {

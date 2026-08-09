@@ -1,6 +1,6 @@
 // Generates blocks A–E of the SQB Layer-2 model catalogue.
 // Every model from the spec produces a deterministic mocked output via the
-// shared seeded RNG so identical inputs return identical outputs (live demo).
+// shared seeded RNG so identical inputs always return identical outputs.
 
 const { pickCompetitorPool } = require('../utils/competitorNames');
 

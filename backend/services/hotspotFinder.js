@@ -3,7 +3,7 @@
 // given business type, and returns the top N candidates.
 //
 // All values are mocked but driven by a deterministic seed so identical
-// inputs always return the same hotspot map (great for live demos).
+// inputs always return the same hotspot map.
 
 const { hashString, seededRandom } = require('../utils/random');
 const { pickCompetitorPool } = require('../utils/competitorNames');

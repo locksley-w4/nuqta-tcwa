@@ -1,6 +1,6 @@
 # AI Business Analyzer
 
-Hackathon MVP that produces a **bank-grade viability report** for opening a business at a given location.
+A platform that produces a **bank-grade viability report** for opening a business at a given location.
 
 ## Beyond the site score — extra features
 
