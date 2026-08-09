@@ -58,14 +58,31 @@ The output is investor / banker ready — drop it straight into a credit memo or
 
 ## Run
 
-### Backend
+You can start both frontend and backend concurrently with a single command from the root `Nuqta` directory.
+
+### Quick Start (Both Frontend & Backend)
+1. Run `npm install` in the root directory (this installs dependencies and links workspaces):
+   ```bash
+   npm install
+   ```
+2. Start both services in development mode:
+   ```bash
+   npm run dev
+   # or: npm start
+   ```
+
+### Individual Services
+
+If you prefer to run them separately:
+
+#### Backend
 ```bash
 cd backend
 npm install
 npm run dev   # http://localhost:5001
 ```
 
-### Frontend
+#### Frontend
 ```bash
 cd frontend
 npm install
